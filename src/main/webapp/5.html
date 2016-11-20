@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        $(function(){
+            $("#gender :selected").css("color","yellow");
+            $("#gender :selected").css("background-color","green");
+
+
+
+//            $("[name=myselect] :selected").css("color","red");
+//            $("[name=myselect] :selected").css("background-color","blue");
+
+            $(".myselect :selected").css("color","yellow");
+            $(".myselect :selected").css("background-color","green");
+
+
+            $(":input").val("哈哈哈");
+            $("#photo").attr("src","images/1.jpg");
+
+
+
+
+        });
+
+    </script>
+</head>
+<body>
+<input id="user" type="text" />
+<br />
+<input id="pass1" type="password" />
+<br />
+<textarea id="intro"></textarea>
+
+<br />
+<select id="gender" class="g">
+    <option value="male" >
+        男
+    </option>
+    <option value="female"  selected="selected">
+        女
+    </option>
+</select>
+<br />
+<br />
+<br />
+足球<input id="pass" type="checkbox" checked="checked" value="xx" />
+<br />
+我的照片：
+<img alt="" src="" id="photo" width="100" height="90">
+
+
+<select name="myselect" class="myselect">
+
+    <option >html专区</option>
+
+    <option >test</option>
+
+    <option  selected="selected">JQuery专区</option>
+
+</select>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script src="js/jquery.cookie.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        for(var key in $.browser){
+            document.writeln("当前浏览器的"+key+"属性为:"+$.browser[key]+"<br/>");
+        }
+        document.write($.trim(" ok  ")+"pl");
+
+        $.each(["A","D","V"],function(i,val){
+            document.write(i+":"+val);
+
+        });
+        document.write("<br/>")
+
+       document.write($.grep(["A","BC","DEF"],function(val,i){
+            return val.length>2;
+        }));
+        document.write("<br/>")
+
+        document.write($.map(["A","BC","DEF"],function(val,i){
+
+            return val+"ok";
+        }));
+
+        alert($.unique(["A","AB","B","C"]).length);
+
+
+    </script>
+
+    <script type="text/javascript">
+        $.cookie("username","ooookokok",{expires:7});//s设置cookie
+        alert($.cookie("username"));
+        $.cookie("username","ooookokok",{expires:-1});
+
+        alert($.cookie("username"));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

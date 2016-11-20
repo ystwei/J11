@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function(){
+
+            $("#test1").bind("click",{"name":"weikun","age":"43"},function(event){
+                alert('ok'+event.data.name);
+
+            });
+
+            $("#test2").click(function(){
+                $("#check").trigger("click");
+
+            });
+
+            $("#test3").toggle(
+                    function(){
+                        alert("1");
+
+                    },function(){
+                        alert("2");
+
+                    },
+                    function(){
+                        alert("3");
+
+                    });
+            $("#test4").css("background-color","red").
+                        width(200).
+                        height(200).hover(
+                    function(event){
+                        alert("鼠标移入");
+
+                    },function(event){
+
+                        alert("鼠标移出");
+                    }
+
+            );
+
+        });
+
+
+
+
+    </script>
+</head>
+<body>
+<input id="test1" type="button" value="单击我" />
+<br />
+<input id="test2" type="button" value="切换右边复选框的勾选状态" />
+<input id="check" type="checkbox"  />
+<br />
+<input id="test3" type="button" value="绑定toggle的按钮" />
+<br />
+<div id="test4">
+    鼠标悬停、移除将触发指定函数
+</div>
+</body>
+</html>
