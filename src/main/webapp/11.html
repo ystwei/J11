@@ -1,0 +1,77 @@
+
+<html>
+<head>
+    <title>Title</title>
+    <script src="js/jquery-1.11.0.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("#pro").change(function(){
+
+                var pro="";
+                $("#pro option").each(function(){
+                    if(this.selected){
+                        pro=this.value;
+                    }
+
+
+                });
+
+                $.ajax({
+                    data:"pro="+pro,
+                    dataType:"text json",
+                    url:"city",
+                    type:"post",
+                    success:function(data){
+                        $("#city option").remove();
+                        var option="<option value='999'>请认真选择</option>";
+
+                        $("#city").append(option);
+
+                        $(data).each(function(i){
+                            option="<option value='"+data[i].value+"'>"+data[i].name+"</option>";
+                            $("#city").append(option);
+                        });
+
+                    }
+                });
+
+            });
+
+
+
+        });
+    </script>
+</head>
+<body>
+    <h1>请选择省份</h1>
+    <select id="pro" >
+        <option value="999">
+            请选择省份
+        </option>
+        <optgroup label="东北">
+
+            <option value="hlj">
+                黑龙江
+            </option>
+            <option value="jl">
+                吉林
+            </option>
+
+        </optgroup>
+        <optgroup label="华北">
+            <option value="hb">
+                河北省
+            </option>
+            <option value="hn">
+                河南
+            </option>
+
+        </optgroup>
+
+    </select>
+    <h1>请选择城市</h1>
+    <select id="city" >
+        <option value="999">请认真选择</option>
+    </select>
+</body>
+</html>

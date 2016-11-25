@@ -28,8 +28,12 @@
             return val+"ok";
         }));
 
-        alert($.unique(["A","AB","B","C"]).length);
+        alert("ok:"+$.unique(["A","AB","A","C"].sort()).length);
+        alert("ok1:"+$.unique(["1","2","1","3"].sort()).length);
+        var  yeararray=new Array(2001,2003,2001,2003);
+        yeararray.sort();
 
+        alert($.unique(yeararray));
 
     </script>
 

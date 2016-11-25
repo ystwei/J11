@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <title>Title</title>
+    <script type="text/javascript">
+
+        $(function(){
+            $("#btn").click(function(){
+                //$("#result").html($("#form1").serialize());
+               var arr=$("#form1").serializeArray();
+                for(var index  in arr){
+                    alert(arr[index].name+":"+arr[index].value);
+                }
+
+            });
+        });
+    </script>
+</head>
+<body>
+    <form id="form1" name="form1" >
+        用户名：<input type="text" name="username">
+        密码：<input type="text" name="pwd">
+        <input type="button" value="按钮" id="btn">
+    </form>
+    <span id="result"></span>
+</body>
+</html>
